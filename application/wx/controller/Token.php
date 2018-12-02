@@ -43,7 +43,7 @@
         }elseif( strtolower( $postObj->MsgType ) == 'text' ) {
               //接收文本信息          
     
-       
+            if( $postObj->Content == '北京天气') {
                    //回复用户消息（纯文本格式）
                   $toUser = $postObj->FromUserName;
                   $fromUser = $postObj->ToUserName;
@@ -51,24 +51,11 @@
                   $msgType = 'text';
               	  $weather_city=mb_substr($postObj->Content,0,2,"utf-8");//mb_substr适用于有中文的，0开始下标，2长度
               	  
-        		  if($weather_city)
-                  { 	
-                    	$weather_code_json = json_decode(file_get_contents("http://www.parcruz.site/getcitycode/".$weather_city));
-                    	if($weather_code_json->code==200)
-                        {
-                        		$weather_code=$weather_code_json->city_code;
-                          		$weather_info_json=json_decode(file_get_contents("http://www.parcruz.site/weather/".$weather_code));
-                          		if($weather_info_json->code==200)
-                                {
-                                		$weather_info=$weather_info_json->weather_info;
-                                }
-                        }
-                    
-       
-                        
+              	  if($weather_city)
+                  {
+                  		//$weather_code=this->redirect('api/weather/getcitycode/read/city_name/'.$weather_city);
                   }
-                  $content = '更新时间：'.$weather_info->time."\n".$weather_city.'天气实时发布'."\n".$weather_info."\n"."网页版"."\n".'http://www.parcruz.site/index/jquery/lala.html';
-          			//  \n一定要用""，而不是''
+                  $content = '【北京天气预报】 2018年11月20日 20时发布  晴 温度：25℃~30℃ 湿度：38% 微风 pm2.5：65'.'      '.'http://www.parcruz.site/index/jquery/lala.html';
                   $template = "<xml>
                                    <ToUserName><![CDATA[%s]]></ToUserName>
                                    <FromUserName><![CDATA[%s]]></FromUserName>
@@ -78,7 +65,7 @@
                                    </xml>";
                   $info = sprintf($template, $toUser, $fromUser, $time, $msgType, $content);
                   echo $info;
-           
+            }
         
         }
     }
