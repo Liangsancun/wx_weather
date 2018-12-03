@@ -67,7 +67,7 @@
        
                         
                   }
-                  $content = '更新时间：'.$weather_info->time."\n".$weather_city.'天气实时发布'."\n".$weather_info."\n"."网页版"."\n".'http://www.parcruz.site/index/jquery/lala.html';
+                  $content = '更新时间：'.date('Y-m-d H:m:s')."\n".$weather_city.'天气实时发布'."\n".$weather_info."\n"."网页版"."\n".'http://www.parcruz.site/index/jquery/lala.html';
           			//  \n一定要用""，而不是''
                   $template = "<xml>
                                    <ToUserName><![CDATA[%s]]></ToUserName>
