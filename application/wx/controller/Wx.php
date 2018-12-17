@@ -58,7 +58,7 @@
           curl_close($ch);
           return  json_decode($out,true);
       }
-     public function createmenu(){
+     public function createmenu(){//先用调用index方法，获得access_token
       $data='{
        "button":[
        {
@@ -72,7 +72,7 @@
              {
                  "type":"view",
                  "name":"实况",
-                 "url":"http://www.parcruz.site/index/jquery/lala"
+                 "url":"http://www.parcruz.site/wx/weatherNow.php"
               },
               {
                  "type":"click",

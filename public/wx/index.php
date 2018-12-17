@@ -60,14 +60,29 @@
                           		$weather_info_json=json_decode(file_get_contents("http://www.parcruz.site/weather/".$weather_code));
                           		if($weather_info_json->code==200)
                                 {
-                                		$weather_info=$weather_info_json->weather_info;
+                                		$weather_info=$weather_info_json->weather_info;//weather_info还是json文件，且json_decode
+                                  		$weather_info=json_decode($weather_info);//将json字符串--》对象obj
+                                  		$today=$weather_info->data->forecast[0];
+                                  
+                                  		$temper=substr($today->low,7)."~".mb_substr($today->high,7);//因为字母占一个字节，中文占2个字节。
+                                       
+                                  		
+                                        $type=$today->type;
+                                        $fl=$today->fx.$today->fl;
+                                        $shidu=$weather_info->data->shidu;
+                                        $pm25=$weather_info->data->pm25;
+                                  
+                                  		
+                                  		$result="天气类型：".$type."\n"."温度：".$temper."\n"."风力：".$fl."\n"."湿度：".$shidu."\n"."PM 2.5：".$pm25;	
+                                  		//$result=json_encode($result,256);//把字符串转化成json，"aini"--->""ainia""
+                                  		
                                 }
                         }
                     
        
                         
                   }
-                  $content = '更新时间：'.date('Y-m-d H:m:s')."\n".$weather_city.'天气实时发布'."\n".$weather_info."\n"."网页版"."\n".'http://www.parcruz.site/index/jquery/lala.html';
+                  $content = '更新时间：'.date('Y-m-d H:m:s')."\n".$weather_city.'天气实时发布'."\n".$result;
           			//  \n一定要用""，而不是''
                   $template = "<xml>
                                    <ToUserName><![CDATA[%s]]></ToUserName>

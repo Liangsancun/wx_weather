@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <!--http-equiv="Content-Type"规定文档的字符编码。-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		  <!--viewpoint是手机的视图，相当于layout，width=device-width页面宽度为手机的宽度，initiacal-scale初始的页面放大倍数，uer-scalable可否手动放大缩小-->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scale=1">
+
+		<!--引入jQuery Moblie样式-->
+		<!--rel=relation="stylesheet"，描述了当前页面与 href 所指定文档的关系是一个样式表，即说明href连接的文档是一个样式表-->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<!--引入jQuery库-->
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<!--引入jQuery mobile库-->
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page" id="pageone" style="background:white">
+		<!--style="blackgroud:white"北京颜色，也可用#ffffff-->
+			
+            <div data-role="header" data-position="fixed">
+                <a href="#" class="ui-btn ui-btn-left ui-icon-home ui-btn-icon-notext ui-corner-all ">首页</a>
+                <h1>北京天气</h1>
+                <a href="#mypopup" data-rel="popup" data-transition="slide" class="ui-btn ui-btn-right ui-icon-bullets ui-btn-icon-notext ui-corner-all">设置</a>
+                <!--ui-btn：按钮，ui-btn-right：按钮放在右面，ui-icon-bullets：栅栏图标，ui-btn-icon-notext：只显示图标，ui-corner-all：为原元素添加圆角-->
+                <!--data-rel="popup"：用于打开弹窗-->
+                <!--data-transition="slide" 切换页面的效果，此时为滑动，还可以是弹出"popup"-->
+                <!--data-role="popup"弹窗-->
+                <div data-role="popup" id="mypopup">
+                	<p>弹窗设置</p>
+                </div>
+
+            </div>
+            <div date-role="content">
+             	<h2 class="subtitle">晴天</h2>
+             	<h2 class="subtitle">15℃~20℃</h2>
+
+	            <hr color="black" size=1>
+	            <!--hr是指分割线。默认 横线，竖线的时候用style="height:50px;width:1px"-->
+	        	<div class="ui-grid-b">
+	        	<!--ui-grid-b：分成3列。ui-block-a|b|c，ui-grid-a：分成2列，ui-block-a|b -->
+	        		<div class="subtitle">
+	        			<h3>气候条件</h3>
+	        		</div>
+		            <div class="ui-block-a">
+	              		 <img src="../static/weather_icon/wind.png" >
+	              		 <!--<img src="" alt="爱你" 如果图片不显示的话，显示alt的值-->
+	               		 <p>风力情况</p>
+	               		 <p>东风2级</p>
+	                 	 
+	              	
+		            </div>
+		         	<div class="ui-block-b">
+		         		<img src="../static/weather_icon/humidity.png">
+		         		<p>湿度</p>
+		         		<p>60%</p>
+		         	</div>
+		         	<div class="ui-block-c">
+		         		<img src="../static/weather_icon/pm25.png">
+		         		<p>PM2.5</p>
+		         		<p>120</p>
+		         	</div>
+		         	<hr color="black" size=1>
+		         	<div class="subtitle">
+		         		<h3>未来天气</h3>
+		         	</div>
+		         	<div class="ui-block-a">
+		         		<p>明天</p>
+		         	</div>
+		         	<div class="ui-block-b"><p>后天</p></div>
+		         	<div class="ui-block-c"><p>大后天</p></div>
+		         	<hr color="black" size=1>
+		        </div>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				
+			</div>
+				
+			
+			
+		</div>
+      
+
+	</body>
+<style>
+.ui-block-a,
+.ui-block-b,
+.ui-block-c
+{
+	height:180px;
+	text-align:center;
+}
+.subtitle{
+	text-align:center;
+}
+</style>
+</html>
+
