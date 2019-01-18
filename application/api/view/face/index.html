@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二手网站主页</title> 
+
+   <!--http-equiv="Content-Type"规定文档的字符编码。-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!--viewpoint是手机的视图，相当于layout，width=device-width页面宽度为手机的宽度，initiacal-scale初始的页面放大倍数，uer-scalable可否手动放大缩小-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scale=1">
+
+  <!--引入jQuery Moblie样式-->
+  <!--rel=relation="stylesheet"，描述了当前页面与 href 所指定文档的关系是一个样式表，即说明href连接的文档是一个样式表-->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <!--引入jQuery库-->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!--引入jQuery mobile库-->
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+ 
+<body>
+ 
+		<div data-role="page" id="pageone" style="background:white">
+		<!--style="blackgroud:white"北京颜色，也可用#ffffff-->
+			
+    
+            <div date-role="content">
+             	<h2 class="subtitle">二手交易网站</h2>
+              <p>{$a.bb}</p>
+              <p>{$data[0]['goodsname']}</p>
+              	
+			  <foreach name="data" item="vo">
+              		{$vo.goodsname}:{$vo.item}<br/>
+              </foreach>
+           
+              <a title="我要收购" href="#pagetwo">我要发布</a>
+              <a title="我要出售" href="//www.parcruz.site/" target="_blank">我要出售</a>
+              <h1 align="center"> 商品列表 </h1>
+    		  <table align="center" width="1300" cellspacing="12" border="1">
+         		 <tr>
+                    
+                    <th> 商品名字 </th>
+                    <th width="100px" height="50"> 简介 </th>
+                    <th> 价格 </th>
+                    <th> 卖家联系方式 </th>
+                    <th> 图片 </th>
+                    <th> 交易结束标志 </th>
+           		 </tr>
+                 <foreach name="$data" item="item">
+            		<tr>
+                        <td>{$item['goodsname']}</td>
+                        <td>{$item['introduce']}</td>
+                        <td>{$item['price']}</td>
+                        <td>{$item['contact']}</td>
+                        <td><img src="#"></td>
+                        <td>
+                            <button> 我是一个钮 </button>
+                        </td>
+           		 	</tr>
+       			 </foreach>
+       		 </table>
+              
+			
+              
+			</div>
+			<div data-role="footer" data-position="fixed">
+				
+			</div>
+				
+			
+			
+		</div>
+		<div data-role="page" id="pagetwo" style="background:white">
+          <p>w w w  w</p>
+  		</div>
+                                                                 
+        
+
+
+<script src="/static/js/jquery.min.js?v=2.1.4"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

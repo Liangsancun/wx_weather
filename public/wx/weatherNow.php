@@ -178,7 +178,7 @@ $signPackage = $jssdk->GetSignPackage();//里面有通过access_token获得的js
     $("#city").text(data.cityInfo.city.substr(0,2)+"天气");
     //今天
 	$("#temper").text(data.data.forecast[0].low.substr(3)+"~"+data.data.forecast[0].high.substr(3));
- 	$("#type").text(data.data.forecast[0].typey);
+ 	$("#type").text(data.data.forecast[0].type);
     $("#shidu").text(data.data.shidu);
     $("#pm25").text(data.data.pm25);
     $("#fl").text(data.data.forecast[0].fx+data.data.forecast[0].fl);
