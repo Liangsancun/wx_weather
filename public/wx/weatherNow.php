@@ -160,7 +160,7 @@ $signPackage = $jssdk->GetSignPackage();//里面有通过access_token获得的js
                 var accuracy = res.accuracy; // 位置精度
                 //alert("latitude:" + latitude + "longitude:" + longitude);//在页面中弹出信息
 
-               $.post("http://www.parcruz.site/wx/wea/read", {lat:latitude, lng:longitude}, function(data){
+               $.post("https://www.parcruz.site/wx/wea/read", {lat:latitude, lng:longitude}, function(data){
                  	var data=JSON.parse(data);//默认把json格式的数据解析为对象
                		getWeather(data);
                }, "json");

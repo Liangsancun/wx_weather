@@ -1,0 +1,61 @@
+-<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录系统</title> 
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+ 
+<body class="gray-bg">
+<div class="container">
+  <div class="row">
+      <div class="col-sm-7">
+          <div class="ibox float-e-margins">            
+              <div class="ibox-content">
+                  <div class="row">
+                      <div class="col-sm-6 b-r">
+                          <h3 class="m-t-none m-b">发布二手信息</h3>
+                      
+                          <form action="adddata" enctype="multipart/form-data" method="post">
+                             <!--action="adddata",即在application/index/controller/Face中寻找addData方法
+                  因为，这个网页是在Face.php里的Face类里使用打开的，故还认为在clss Face中，action相当于调用方法
+					enctype编码格式，默认值为application/x-www-form-urlencoded，不能用于文件上传；只有使用了 multipart/form-data，才能完整的传递文件数据-->
+                              <div class="form-group">
+                                  <label>物品名称</label>
+                                  <input type="text" placeholder="请输入物品名称" class="form-control" name="goodsname">
+                              </div>
+                              <div class="form-group">
+                                  <label>物品描述</label>
+                                  <input type="text" placeholder="请输入物品描述" class="form-control" name="introduce">
+                              </div>
+                              <div class="form-group">
+                                  <label>价格</label>
+                                  <input type="text" placeholder="想卖多少钱？" class="form-control" name="price">
+                              </div> 
+                              <div class="form-group">
+                                  <label>联系方式</label>
+                                  <input type="text" placeholder="怎么联系你？" class="form-control" name="contact">
+                              </div>                             
+                              <div>
+                                  <button class="btn btn-sm btn-primary pull-left" type="submit"><strong>提交</strong>
+                                      <!--btn：按钮，btn-sm：小号，lg大号，xm超小号,btn-primary：基础颜色蓝色，strong加粗-->
+                                  </button>                                
+                              </div>
+                              
+                                
+                                  
+                                
+                          </form>
+                           
+                      </div>                     
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div> 
+<script src="/static/js/jquery.min.js?v=2.1.4"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

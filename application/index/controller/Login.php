@@ -25,6 +25,7 @@ class Login extends Controller
     	$param = input('post.');//把数据从html中取出来，作为一个集体$param
       	$user_name=$param['user_name'];
         $user_pwd=$param['user_pwd'];
+
     	if(empty($user_name)){
     		
     		$this->error('用户名不能为空');
